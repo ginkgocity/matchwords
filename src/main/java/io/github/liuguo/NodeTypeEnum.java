@@ -1,4 +1,4 @@
-package com.hfh;
+package io.github.liuguo;
 
 public enum NodeTypeEnum {
     ROOT((short)0,"根节点"),

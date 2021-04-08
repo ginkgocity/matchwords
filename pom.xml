@@ -10,7 +10,7 @@
 
     <packaging>pom</packaging>
     <name>match-words</name>
-    <url>https://github.com/13816433186/matchwords</url>
+    <url>https://github.com/hfh-open/matchwords.git</url>
 
     <description>A sensitive word filter</description>
 
@@ -24,8 +24,8 @@
 
     </licenses>
     <scm>
-        <url>https://github.com/13816433186/matchwords</url>
-        <connection>https://github.com/13816433186/matchwords.git</connection>
+        <url>https://github.com/hfh-open/matchwords.git</url>
+        <connection>https://github.com/hfh-open/matchwords.git</connection>
     </scm>
 
     <properties>

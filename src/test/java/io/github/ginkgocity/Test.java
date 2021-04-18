@@ -1,17 +1,17 @@
-package io.github.liuguo;
+package io.github.ginkgocity;
 
 import java.util.List;
 
 public class Test {
     private static String [] arr = {
-            "å°ç‹—",
-            "ç‹—ç‹—",
-            "å¤§ä¾ "};
+            "Ğ¡¹·",
+            "¹·¹·",
+            "´óÏÀ"};
 
     public static void main(String[] args) {
         WordTree tree = new WordTree();
         tree.addWords(arr);
-        String text = "ç‹—å°ç‹—ç‹—ç‹—ç‹—ç‹—";
+        String text = "¹·Ğ¡¹·¹·¹·¹·¹·";
         List<String> list = tree.match(text);
         System.out.println(list);
     }

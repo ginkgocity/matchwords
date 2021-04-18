@@ -1,4 +1,4 @@
-package io.github.liuguo;
+package io.github.ginkgocity;
 
 import java.util.HashMap;
 import java.util.Map;

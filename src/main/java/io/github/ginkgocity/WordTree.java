@@ -1,10 +1,10 @@
-package io.github.liuguo;
+package io.github.ginkgocity;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 词树
+ * WordTree
  *
  * @author hfh
  */
@@ -19,17 +19,11 @@ public class WordTree {
         return root;
     }
 
-    /**
-     * 添加需要匹配的单词
-     */
     public void addWords(String words){
         String [] arr = {words};
         addWords(arr);
     }
 
-    /**
-     * 添加需要匹配的单词数组
-     */
     public void addWords(String [] words){
         NodeTypeEnum type;
         TreeNode cnode;
@@ -50,11 +44,6 @@ public class WordTree {
         }
     }
 
-    /**
-     * 从一个字符文本中，找到命中匹配到的词集
-     *
-     * @return 匹配到的词集
-     */
     public List<String> match(String text){
         TreeNode treeNode = root();
         List<String> list = new ArrayList<>();
@@ -77,11 +66,6 @@ public class WordTree {
     }
 
 
-    /**
-     * 从一个字符文本中，判断是否存在有命中匹配的词语
-     *
-     * @return 命中结果
-     */
     public boolean exist(String text){
         TreeNode treeNode = root();
         char word;

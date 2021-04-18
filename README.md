@@ -1,2 +1,2 @@
 # matchwords
-A sensitive word filter
+敏感词/多字符串匹配

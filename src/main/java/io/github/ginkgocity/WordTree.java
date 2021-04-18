@@ -19,8 +19,8 @@ public class WordTree {
         return root;
     }
 
-    public void addWords(String words){
-        String [] arr = {words};
+    public void addWord(String word){
+        String [] arr = {word};
         addWords(arr);
     }
 

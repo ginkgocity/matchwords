@@ -28,6 +28,10 @@ public class TreeNode {
         return child.get(word) != null;
     }
 
+    public boolean existChild(){
+        return this.child==null || this.child.size()>0;
+    }
+
     public TreeNode addChild(char word,NodeTypeEnum type){
 
         TreeNode node = child.get(word);

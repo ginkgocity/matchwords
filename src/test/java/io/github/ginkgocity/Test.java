@@ -11,8 +11,8 @@ public class Test {
     public static void main(String[] args) {
         WordTree tree = new WordTree();
         tree.addWords(arr);
-        String text = "นทะกนทนทนทนทนท";
-        List<String> list = tree.match(text);
+        String text = "ะกนทนทนท";
+        List<String> list = tree.simpleMatch(text);
         System.out.println(list);
     }
 }

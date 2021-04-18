@@ -44,6 +44,28 @@ public class WordTree {
         }
     }
 
+    public List<String> simpleMatch(String text){
+        TreeNode treeNode = root();
+        List<String> list = new ArrayList<>();
+        char word;
+        for(int i=0;i<text.length();i++){
+            word = text.charAt(i);
+            treeNode = treeNode.get(word);
+            if( treeNode == null){
+                treeNode = root().get(word);
+                if(treeNode!=null){
+                    if(treeNode.getType() == NodeTypeEnum.END)
+                        list.add(treeNode.getWordsString());
+                }else{
+                    treeNode = root();
+                }
+            }else if(treeNode.getType() == NodeTypeEnum.END){
+                list.add(treeNode.getWordsString());
+            }
+        }
+        return list;
+    }
+
     public List<String> match(String text){
         TreeNode treeNode = root();
         List<String> list = new ArrayList<>();
@@ -56,15 +78,17 @@ public class WordTree {
                 if(treeNode!=null){
                     if(treeNode.getType() == NodeTypeEnum.END)
                         list.add(treeNode.getWordsString());
-                }else
+                }else{
                     treeNode = root();
+                    i--;
+                }
             }else if(treeNode.getType() == NodeTypeEnum.END){
                 list.add(treeNode.getWordsString());
+                if(!treeNode.existChild())i--;
             }
         }
         return list;
     }
-
 
     public boolean exist(String text){
         TreeNode treeNode = root();

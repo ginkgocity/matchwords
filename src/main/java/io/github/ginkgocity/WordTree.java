@@ -43,7 +43,25 @@ public class WordTree {
             }
         }
     }
-
+    public void addWhiteWords(String [] words){
+        NodeTypeEnum type;
+        TreeNode cnode;
+        String str;
+        for (int i = 0; i < words.length; i++) {
+            str = words[i];
+            cnode = root();
+            for (int j = 0; j < str.length(); j++) {
+                if(j==str.length()-1){
+                    cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.WHITE,str);
+                }else if(j==0){
+                    cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.START,str);
+                }
+                else{
+                    cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.MIDDLE);
+                }
+            }
+        }
+    }
     public List<String> simpleMatch(String text){
         TreeNode treeNode = root();
         List<String> list = new ArrayList<>();

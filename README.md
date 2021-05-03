@@ -26,7 +26,7 @@ List<String> list = tree.simpleMatch(text);
 输出: [小狗]
 ```
 
- 	3. 全量匹配
+3. 全量匹配
 
 ```java
 String text = "小狗毛";

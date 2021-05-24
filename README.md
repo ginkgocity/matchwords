@@ -15,9 +15,11 @@
 
 ```java
 String [] arr = {"小狗","狗毛","大侠"}
+//声明一个字典树
 WordTree tree = new WordTree();
 tree.addWords(arr);
-//线程安全的节点树
+
+//声明一个线程安全的字典树
 WordTree tree = new WordTree(new SyncTreeNode());
 ```
 

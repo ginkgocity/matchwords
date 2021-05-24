@@ -6,8 +6,7 @@
 
 3. 用其他同类型项目测试性能，使用相同的文本和敏感词，处理一万次。可以看到，本项目性能上的优势。
    <img src="http://mail.163.com/js6/s?func=mbox:getMessageData&mid=418:xtbBogWcmlaEAQxwgwABsM&part=3"/>
-   ![](C:\Users\liuguo18301806757\Pictures\Feedback\4552903979c5bc758955a93b2361f0c.png)
-   ![](C:\Users\liuguo18301806757\Pictures\Feedback\c1343bf41c83c272e21bfdd85492381.png)
+
    
 **二、API预览**
 

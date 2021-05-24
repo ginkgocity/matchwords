@@ -5,7 +5,7 @@
 2. 支持简单匹配，全量匹配，白名单等等模式。简单匹配性能最好，但是不能完全匹配，其中区别API中有体现。白名单主要处理词汇中包含黑名单的词。
 
 3. 用其他同类型项目测试性能，使用相同的文本和敏感词，处理一万次。可以看到，本项目性能上的优势。
-   <img src="https://mail.163.com/js6/s?func=mbox:getMessageData&mid=418:xtbBogWcmlaEAQxwgwABsM&part=3"/>
+   <img src="https://mail.163.com/js6/s?func=mbox:getMessageData&mid=418:xtbBogWcmlaEAQxwgwABsM&part=4"/>
 
    
 **二、API预览**

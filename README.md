@@ -17,6 +17,8 @@
 String [] arr = {"小狗","狗毛","大侠"}
 WordTree tree = new WordTree();
 tree.addWords(arr);
+//线程安全的节点树
+WordTree tree = new WordTree(new SyncTreeNode());
 ```
 
 2. 简单匹配敏感词。

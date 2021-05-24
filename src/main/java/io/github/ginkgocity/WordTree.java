@@ -10,14 +10,15 @@ import java.util.List;
  */
 public class WordTree {
 
-    private TreeNode root = null;
+    private Node root = null;
 
-    public TreeNode root(){
-        if(root == null){
-            root = new TreeNode('0',NodeTypeEnum.ROOT);
-        }
-        return root;
+    public WordTree(){
+        this.root = new TreeNode();
     }
+    public WordTree(Node node){
+        this.root = node;
+    }
+
 
     public void addWord(String word){
         String [] arr = {word};
@@ -26,11 +27,11 @@ public class WordTree {
 
     public void addWords(String [] words){
         NodeTypeEnum type;
-        TreeNode cnode;
+        Node cnode;
         String str;
         for (int i = 0; i < words.length; i++) {
             str = words[i];
-            cnode = root();
+            cnode = this.root;
             for (int j = 0; j < str.length(); j++) {
                 if(j==str.length()-1){
                     cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.END,str);
@@ -45,11 +46,11 @@ public class WordTree {
     }
     public void addWhiteWords(String [] words){
         NodeTypeEnum type;
-        TreeNode cnode;
+        Node cnode;
         String str;
         for (int i = 0; i < words.length; i++) {
             str = words[i];
-            cnode = root();
+            cnode = this.root;
             for (int j = 0; j < str.length(); j++) {
                 if(j==str.length()-1){
                     cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.WHITE,str);
@@ -62,20 +63,21 @@ public class WordTree {
             }
         }
     }
+
     public List<String> simpleMatch(String text){
-        TreeNode treeNode = root();
+        Node treeNode = this.root;
         List<String> list = new ArrayList<>();
         char word;
         for(int i=0;i<text.length();i++){
             word = text.charAt(i);
             treeNode = treeNode.get(word);
             if( treeNode == null){
-                treeNode = root().get(word);
+                treeNode = this.root.get(word);
                 if(treeNode!=null){
                     if(treeNode.getType() == NodeTypeEnum.END)
                         list.add(treeNode.getWordsString());
                 }else{
-                    treeNode = root();
+                    treeNode = this.root;
                 }
             }else if(treeNode.getType() == NodeTypeEnum.END){
                 list.add(treeNode.getWordsString());
@@ -85,20 +87,20 @@ public class WordTree {
     }
 
     public List<String> match(String text){
-        TreeNode treeNode = root();
+        Node treeNode = this.root;
         List<String> list = new ArrayList<>();
         char word;
         for(int i=0;i<text.length();i++){
             word = text.charAt(i);
             treeNode = treeNode.get(word);
             if( treeNode == null){
-                treeNode = root().get(word);
+                treeNode = this.root.get(word);
                 if(treeNode!=null){
                     if(treeNode.getType() == NodeTypeEnum.END)
                         list.add(treeNode.getWordsString());
                 }else{
-                    treeNode = root();
-                    i--;
+                    treeNode = this.root;
+                    //i--;
                 }
             }else if(treeNode.getType() == NodeTypeEnum.END){
                 list.add(treeNode.getWordsString());
@@ -109,17 +111,17 @@ public class WordTree {
     }
 
     public boolean exist(String text){
-        TreeNode treeNode = root();
+        Node treeNode = this.root;
         char word;
         for(int i=0;i<text.length();i++){
             word = text.charAt(i);
             treeNode = treeNode.get(word);
             if( treeNode == null){
-                treeNode = root().get(word);
+                treeNode = this.root.get(word);
                 if(treeNode!=null){
                     if(treeNode.getType() == NodeTypeEnum.END)return true;
                 }else
-                    treeNode = root();
+                    treeNode = this.root;
             }else if(treeNode.getType() == NodeTypeEnum.END){
                 return true;
             }

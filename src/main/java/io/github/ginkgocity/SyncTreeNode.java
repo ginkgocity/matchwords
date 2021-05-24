@@ -1,24 +1,24 @@
 package io.github.ginkgocity;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
-public class TreeNode implements Node{
+public class SyncTreeNode implements Node{
     private char word;
     private NodeTypeEnum type;
-    private TreeNode parent;
-    private Map<Character,TreeNode> child = null;
+    private SyncTreeNode parent;
+    private Map<Character,SyncTreeNode> child = null;
     private String wordsString = null;
-    TreeNode(){
-        this.word = '0';
-        this.type = NodeTypeEnum.ROOT;
-        this.child = new HashMap<Character,TreeNode>();;
-    }
-
-    TreeNode(char word,NodeTypeEnum type){
+    SyncTreeNode(char word,NodeTypeEnum type){
         this.word = word;
         this.type = type;
-        this.child = new HashMap<Character,TreeNode>();;
+        this.child = new ConcurrentHashMap<Character,SyncTreeNode>();;
+    }
+
+    SyncTreeNode(){
+        this.word = '0';
+        this.type = NodeTypeEnum.ROOT;
+        this.child = new ConcurrentHashMap<Character,SyncTreeNode>();;
     }
 
     public NodeTypeEnum getType(){
@@ -26,7 +26,7 @@ public class TreeNode implements Node{
     }
 
 
-    public TreeNode get(char word){
+    public Node get(char word){
         return child.get(word);
     }
 
@@ -38,11 +38,11 @@ public class TreeNode implements Node{
         return this.child==null || this.child.size()>0;
     }
 
-    public TreeNode addChild(char word,NodeTypeEnum type){
+    public SyncTreeNode addChild(char word,NodeTypeEnum type){
 
-        TreeNode node = child.get(word);
+        SyncTreeNode node = child.get(word);
         if( node== null){
-            node = new TreeNode(word,type);
+            node = new SyncTreeNode(word,type);
             child.put(word,node);
         }
 
@@ -53,8 +53,8 @@ public class TreeNode implements Node{
         return node;
     }
 
-    public TreeNode addChild(char word,NodeTypeEnum type,String wordsString){
-        TreeNode node = addChild(word,type);
+    public Node addChild(char word,NodeTypeEnum type,String wordsString){
+        SyncTreeNode node = addChild(word,type);
         node.wordsString = wordsString;
         return node;
     }

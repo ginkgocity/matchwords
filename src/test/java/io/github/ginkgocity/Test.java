@@ -1,12 +1,13 @@
 package io.github.ginkgocity;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Test {
     private static String [] arr = {
             "ะกนท",
             "นทนท",
-            "ด๓ฯภ"};
+            "นทด๓"};
 
     private static String [] arr2 = {
             "ด๓ะกนท",
@@ -16,8 +17,14 @@ public class Test {
         WordTree tree = new WordTree();
         tree.addWords(arr);
         tree.addWhiteWords(arr2);
-        String text = "ะกนทด๓นทนทนทนท";
-        List<String> list = tree.simpleMatch(text);
-        System.out.println(list);
+        String text = "ะกนทด๓ะกนทนทนท";
+        long l = System.currentTimeMillis();
+        List<String> list = null;
+        for (int i=0;i<1;i++){
+            list = tree.match(text);
+        }
+        for (String s : list)
+            System.out.println(s);
+
     }
 }

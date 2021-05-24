@@ -5,7 +5,7 @@
 2. 支持简单匹配，全量匹配，白名单等等模式。简单匹配性能最好，但是不能完全匹配，其中区别API中有体现。白名单主要处理词汇中包含黑名单的词。
 
 3. 用其他同类型项目测试性能，使用相同的文本和敏感词，处理一万次。可以看到，本项目性能上的优势。
-   <img src="C:\Users\liuguo18301806757\Pictures\Feedback\12e1715a061679a1b52da86e530abc5.png"  />
+   <img src="/ginkgocity/img-storage/blob/main/12e1715a061679a1b52da86e530abc5.png"/>
    ![](C:\Users\liuguo18301806757\Pictures\Feedback\4552903979c5bc758955a93b2361f0c.png)
    ![](C:\Users\liuguo18301806757\Pictures\Feedback\c1343bf41c83c272e21bfdd85492381.png)
    

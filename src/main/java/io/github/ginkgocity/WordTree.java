@@ -53,7 +53,7 @@ public class WordTree {
             cnode = this.root;
             for (int j = 0; j < str.length(); j++) {
                 if(j==str.length()-1){
-                    cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.WHITE,str);
+                    cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.WHITE,"");
                 }else if(j==0){
                     cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.START,str);
                 }

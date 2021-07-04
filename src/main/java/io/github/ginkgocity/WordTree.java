@@ -1,5 +1,7 @@
 package io.github.ginkgocity;
 
+import com.sun.org.apache.xerces.internal.xs.ShortList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,9 @@ public class WordTree {
     public WordTree(Node node){
         this.root = node;
     }
-
+    public Node getRoot(){
+        return this.root;
+    }
 
     public void addWord(String word){
         String [] arr = {word};
@@ -55,7 +59,7 @@ public class WordTree {
                 if(j==str.length()-1){
                     cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.WHITE,"");
                 }else if(j==0){
-                    cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.START,str);
+                    cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.START,"");
                 }
                 else{
                     cnode = cnode.addChild(str.charAt(j),NodeTypeEnum.MIDDLE);
@@ -128,4 +132,7 @@ public class WordTree {
         }
         return false;
     }
+
+
+
 }

@@ -6,7 +6,6 @@ import java.util.Map;
 public class TreeNode implements Node{
     private char word;
     private NodeTypeEnum type;
-    private TreeNode parent;
     private Map<Character,TreeNode> child = null;
     private String wordsString = null;
     TreeNode(){
@@ -57,6 +56,10 @@ public class TreeNode implements Node{
         TreeNode node = addChild(word,type);
         node.wordsString = wordsString;
         return node;
+    }
+
+    public Map<Character,TreeNode> getChild(){
+        return this.child;
     }
 
     public String getWordsString(){

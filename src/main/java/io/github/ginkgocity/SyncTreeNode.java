@@ -6,7 +6,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class SyncTreeNode implements Node{
     private char word;
     private NodeTypeEnum type;
-    private SyncTreeNode parent;
     private Map<Character,SyncTreeNode> child = null;
     private String wordsString = null;
     SyncTreeNode(char word,NodeTypeEnum type){
